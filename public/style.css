@@ -1,0 +1,25 @@
+.Container{
+    padding-left: 18vw;
+    padding-top: 7vh;
+}
+.datatables{
+    width: 80vw;
+    
+}
+.TableauStyle{
+    border-collapse: collapse;
+    width: auto;
+}
+
+th, td{
+    padding: 10px 40px;
+}
+tbody tr,td,th{
+    border: 1px solid #ddd;
+}
+tbody tr:nth-child(even){
+    background-color: #f3f3f3;
+}
+thead tr:first-of-type{
+    border-bottom:2px solid black;
+}
