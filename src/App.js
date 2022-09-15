@@ -1,45 +1,38 @@
 import './App.css';
 import React from 'react';
 import NavbarBrand from './component/NavbarBrand';
-import SidebarToggle from './component/SidebarToggle';
 import NavbarSearch from './component/NavbarSearch';
-import Navbar1 from './component/Navbar1';
 import SidenavCore from './component/SidenavCore';
-import SidenavFooter from './component/SidenavFooter';
 import Tables from './component/Tables';
 import DataTables from './component/DataTables';
-import DatatablesExamples from './component/DatatablesExamples';
-import Footer from './component/Footer';
+
+
 
 
 const PRODUCTS = [
-    {Name:"Tiger Nixon",Position:"System Architect",Office:"Edinburgh",age:61,Start_date:"2011/04/25",salary:"$320,800"},
-    {Name:"Airi Satou",Position:"Accountant",Office:"Tokyo",age:33,Start_date:"2008/11/28",salary:"$162,700"},
-    {Name:"Garrett Winters",Position:"Junior Technical Author",Office:"Tokyo",age:63,Start_date:"2011/07/25",salary:"$170,750"},
-    {Name:"Ashton Cox",Position:"Senior Javascript Developer",Office:"Edinburgh",age:22,Start_date:"2012/03/29",salary:"$433,060"},
-    {Name:"Cedric Kelly",Position:"Accountant",Office:"Tokyo",age:33,Start_date:"2008/11/28",salary:"$162,700"},
-    {Name:"Brielle Williamson",Position:"Integration Specialist",Office:"TNew York",age:61,Start_date:"2012/12/02",salary:"$372,000"},
-    {Name:"Herrod Chandler",Position:"Sales Assistant",Office:"San Francisco",age:55,Start_date:"2012/08/06",salary:"$137,500"},
-    {Name:"Rhona Davidson",Position:"Integration Specialist",Office:"Tokyo",age:33,Start_date:"2010/10/14",salary:"$327,900"},
-    {Name:"Colleen Hurst",Position:"Javascript Developer",Office:"San Francisco",age:39,Start_date:"2009/09/15",salary:"$205,500"},
-    {Name:"Rhona Davidson",Position:"Software Engineer",Office:"Edinburgh",age:23,Start_date:"2010/10/14",salary:"$327,900"},
-    {Name:"Sonya Frost",Position:"Integration Specialist",Office:"Tokyo",age:33,Start_date:"2008/12/13",salary:"$103,600"},
-    {Name:"Jena Gaines",Position:"Office Manager",Office:"London",age:30,Start_date:"2008/12/19",salary:"$90,560"},
+    {Id_candidate: '1',Name: 'Amie',First_Name: 'Francisco Torphy',Birth_date: '1998-12-30',Mail: "Wilfrid.Hayes43@yahoo.com",Contact: "0348856666", Id_candidacy: 72,},
+    {Id_candidate: '2',Name: 'Dian',First_Name: 'Todd Homenick',Birth_date: '1999-12-04',Mail: "Cydney.Rodriguez77@yahoo.com",Contact: "0340817358", Id_candidacy: 49,},
+    {Id_candidate: '3',Name: 'Cornl',First_Name: 'Kristin Price',Birth_date: '1997-10-25',Mail: "Hassie_Boyer48@yahoo.com",Contact: "0323915050",Id_candidacy: 65,},{Id_candidate: '4',Name: 'Clot',First_Name: 'Marcos Keeling',Birth_date: '2000-04-18',Mail: "Roy_Gislason16@hotmail.com",Contact: "0337919527",Id_candidacy: 8},
+    {Id_candidate: '5',Name: 'Javi',First_Name: 'Cindy Bashirian',Birth_date: '2002-10-05',Mail: "Mathilde_Rogahn@hotmail.com",Contact: "0328950341",Id_candidacy: 62},
+    {Id_candidate: '6',Name: 'Zachiah',First_Name: 'Ellen Jacobson',Birth_date: '1997-03-01',Mail: "Darrick_Morar14@gmail.com",Contact: "0320342811", Id_candidacy: 49},
+    {Id_candidate: '7',Name: 'Mari',First_Name: 'Marty Lebsack',Birth_date: '1999-09-22',Mail: "Sidney80@hotmail.com",Contact: "0348111285",Id_candidacy: 60,},{Id_candidate: '8',Name: 'Antw',First_Name: 'Dr. Preston Kub',Birth_date: '1997-03-26',Mail: "Yesenia_McCullough1@gmail.com",Contact: "0344988963", Id_candidacy: 72},
+    {Id_candidate: '9',Name: 'Mona',First_Name: 'Marvin Satterfield',Birth_date: '2002-07-29',Mail: "Max43@yahoo.com",Contact: "0348722054",Id_candidacy: 51},{Id_candidate: '10',Name: 'Bula',First_Name: 'Salvatore Abshire',Birth_date: '1997-03-30',Mail: "Samara23@hotmail.com",Contact: "0324683796", Id_candidacy: 37}
+    ];
 
-];
 function ProductRow ({product}){
     return <tr>
+    <td>{product.Id_candidate}</td>
     <td>{product.Name}</td>
-    <td>{product.Position}</td>
-    <td>{product.Office}</td>
-    <td>{product.age}</td>
-    <td>{product.Start_date}</td>
-    <td>{product.salary}</td>
+    <td>{product.First_Name}</td>
+    <td>{product.Birth_date}</td>
+    <td>{product.Mail}</td>
+    <td>{product.Contact}</td>
+    <td>{product.Id_candidacy}</td>
 </tr>
 }
 function ProductCategoryRow ({category}){
     return <tr>
-        <th colSpan='6'>{category}</th>
+        <th colSpan='7'>{category}</th>
     </tr>
 }
 
@@ -57,12 +50,13 @@ function ProductTable ({products}){
         <table className='table'>
              <thead>
         <tr>
+            <th>Id_candidate</th>
             <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
+            <th>First_Name</th>
+            <th>Birth_date</th>
+            <th>Mail</th>
+            <th>Contact</th>
+            <th>Id_candidacy</th>
         </tr>
     </thead>
         <tbody>
@@ -85,9 +79,7 @@ function App(){
       <body class="sb-nav-fixed">
       <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <NavbarBrand/>
-        <SidebarToggle/>
         <NavbarSearch/>
-        <Navbar1/>
       </nav>
       <div id="layoutSidenav">
            <div id="layoutSidenav_nav">
@@ -95,7 +87,6 @@ function App(){
                    <div class="sb-sidenav-menu">
                    <SidenavCore/>
                    </div>
-                   <SidenavFooter/>
                </nav>
            </div>
       </div>
@@ -116,11 +107,7 @@ function App(){
                                      
                         </div>
          </main>
-         <footer class="py-4 bg-light mt-auto">
-             <div class="container-fluid px-4">
-                <Footer/>
-             </div>
-         </footer>
+
        </div>
        </div>
       
