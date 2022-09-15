@@ -1,7 +1,7 @@
-import REACT from 'react';
+
 function NavbarBrand (){
     return(
-        <a className="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+        <a className="navbar-brand ps-3" href="index.html">Gestion concours</a>
     );
 };
  export default NavbarBrand;
